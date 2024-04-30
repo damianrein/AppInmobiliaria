@@ -6,7 +6,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+/*
+Si es una venta, se registra, fecha, datos del comprador, de la propiedad, forma de pago y valor
+abonado.
 
+*/
 @Entity
 public class Sale extends Contract{
 

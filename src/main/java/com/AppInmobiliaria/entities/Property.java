@@ -1,5 +1,7 @@
 package com.AppInmobiliaria.entities;
 
+import java.util.Set;
+
 import com.AppInmobiliaria.enums.PropertyState;
 import com.AppInmobiliaria.enums.TipoPropiedad;
 
@@ -39,4 +41,5 @@ public class Property {
 	private Contract contrato;
 	@Enumerated(EnumType.ORDINAL)
 	private PropertyState state;
+	private Set<Visit> visits;
 }
