@@ -27,21 +27,11 @@ que está, la cantidad cuadrados del terreno y cubiertos, la cantidad de ambient
 baños, si posee o no cochera, quincho, parrilla o pileta, la dirección y el barrio, así como también
 registrar el monto de alquiler y/o de venta, según corresponda.
 
-Se llevará un registro de las visitas de los clientes, indicando la fecha y la opinión del mismo
-respecto de la propiedad.
 
-Se llevará asimismo un registro de los pedidos de los clientes, a los fines de poder ofrecerles las
-propiedades que posee la inmobiliaria, se registrará la fecha del pedido, el tipo de propiedad
-buscada, si es para alquiler o compra, cantidad de habitaciones, preferencias de barrios, indicando
-además si el pedido está o no vigente.
 
-Cuando se alquila una propiedad se realiza un contrato, indicando, datos de la propiedad, cliente
-que alquila, fecha de inicio y de fin del contrato, monto mensual de alquiler, y fecha de fin, tenga en
-cuenta que se puede cancelar el contrato antes que se venza, asimismo se registrarán los pagos
-mensuales recibidos, indicando mes, año y monto abonado.
 
-Si es una venta, se registra, fecha, datos del comprador, de la propiedad, forma de pago y valor
-abonado.
+
+
 
 Se pide:
 - Listar todas las propiedades en alquiler de una ciudad dada.
