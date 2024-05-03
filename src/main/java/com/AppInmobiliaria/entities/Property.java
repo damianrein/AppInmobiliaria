@@ -2,6 +2,7 @@ package com.AppInmobiliaria.entities;
 
 import java.util.Set;
 
+import com.AppInmobiliaria.dtos.PropertyDto;
 import com.AppInmobiliaria.enums.PropertyState;
 import com.AppInmobiliaria.enums.TipoPropiedad;
 
@@ -69,6 +70,23 @@ public class Property {
 		this.state = state;
 		this.visits = visits;
 	}
+	public Property(PropertyDto dto) {
+		this.tipo = dto.tipo();
+		this.ciudad = dto.ciudad();
+		this.metros2 = dto.metros2();
+		this.metros2cubiertos = dto.metros2cubiertos();
+		this.ambientes = dto.ambientes();
+		this.habitaciones = dto.habitaciones();
+		this.banios = dto.banios();
+		this.cochera = dto.cochera();
+		this.quincho = dto.quincho();
+		this.parrilla = dto.parrilla();
+		this.pileta = dto.pileta();
+		this.direccion = dto.direccion();
+		this.barrio = dto.barrio();
+		this.state = dto.state();
+	}
+//----------------------------------------------------------------------------------------------------------------------------------------------
 	public TipoPropiedad getTipo() {
 		return tipo;
 	}
