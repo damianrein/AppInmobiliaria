@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,11 +23,13 @@ public class RealStateUserController {
 		this.services = services;
 	}
 
+	@PostMapping("/")
 	public ResponseEntity<?> addNewUser(@RequestBody RealStateUser user){
 		services.createUser(user);
 		return ResponseEntity.status(HttpStatusCode.valueOf(201)).build();
 	}
 
+	@GetMapping("/")
 	public ResponseEntity<List<RealStateUser>> findAllUsers(){
 		
 		return ResponseEntity.ok(services.findAllRealStateUser());
