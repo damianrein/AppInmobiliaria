@@ -10,11 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.AppInmobiliaria.dtos.LoginResponse;
-import com.AppInmobiliaria.dtos.LoginUsuario;
 import com.AppInmobiliaria.entities.RealStateUser;
-import com.AppInmobiliaria.services.AuthService;
-import com.AppInmobiliaria.services.JwtService;
 import com.AppInmobiliaria.services.RealStateUserService;
 
 @RestController
@@ -22,22 +18,9 @@ import com.AppInmobiliaria.services.RealStateUserService;
 public class RealStateUserController {
 
 	private RealStateUserService services;
-	
-	private AuthService authServices;
-	
-	private JwtService jwtService;
-	
+
 	public RealStateUserController(RealStateUserService services) {
 		this.services = services;
-	}
-	
-	@PostMapping("/login")
-	public ResponseEntity<?> login(@RequestBody LoginUsuario user){
-		RealStateUser usuario = authServices.loguearse(user);
-		String token = jwtService.generateToken(usuario);
-		
-		LoginResponse response = new LoginResponse(token,jwtService.getExpirationTime());
-		return ResponseEntity.ok(response);
 	}
 
 	@PostMapping("/")
@@ -48,7 +31,6 @@ public class RealStateUserController {
 
 	@GetMapping("/")
 	public ResponseEntity<List<RealStateUser>> findAllUsers(){
-		
 		return ResponseEntity.ok(services.findAllRealStateUser());
 	}
 }

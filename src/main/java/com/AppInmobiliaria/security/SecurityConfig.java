@@ -33,13 +33,12 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		
 		return	http.csrf(c->c.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
-		.authorizeHttpRequests(au->{au.requestMatchers("/client").permitAll();
+		.authorizeHttpRequests(au->{au.requestMatchers("/auth/login").permitAll();
 		au.anyRequest().authenticated();})
 		.sessionManagement(session->{session.sessionCreationPolicy(SessionCreationPolicy.STATELESS);})
 		.authenticationProvider(authPro)
 		.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
-		.build()
-		;
+		.build();
 	}
 	
 	@Bean
