@@ -13,6 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotBlank;
 
 /*
 De cada propiedad se registrara: el tipo (casa, departamento, local comercial, etc.), la ciudad en la
@@ -45,6 +46,8 @@ public class Property {
 	private PropertyState state;
 	@OneToMany
 	private Set<Visit> visits;
+	@NotBlank
+	private String [] urlsFotos;
 	
 	public Property() {}
 	
