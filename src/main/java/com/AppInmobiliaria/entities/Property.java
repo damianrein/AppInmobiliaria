@@ -1,5 +1,6 @@
 package com.AppInmobiliaria.entities;
 
+import java.util.List;
 import java.util.Set;
 
 import com.AppInmobiliaria.dtos.PropertyDto;
@@ -47,10 +48,36 @@ public class Property {
 	@OneToMany
 	private Set<Visit> visits;
 	@NotBlank
-	private String [] urlsFotos;
+	private List<String> urlsFotos;
 	
 	public Property() {}
 	
+	public Property(Long id, TipoPropiedad tipo, String ciudad, String metros2, String metros2cubiertos,
+			short ambientes, short habitaciones, short banios, boolean cochera, boolean quincho, boolean parrilla,
+			boolean pileta, String direccion, String barrio, Contract contrato, PropertyState state, Set<Visit> visits,
+			@NotBlank List<String> urlsFotos) {
+		this.id = id;
+		this.tipo = tipo;
+		this.ciudad = ciudad;
+		this.metros2 = metros2;
+		this.metros2cubiertos = metros2cubiertos;
+		this.ambientes = ambientes;
+		this.habitaciones = habitaciones;
+		this.banios = banios;
+		this.cochera = cochera;
+		this.quincho = quincho;
+		this.parrilla = parrilla;
+		this.pileta = pileta;
+		this.direccion = direccion;
+		this.barrio = barrio;
+		this.contrato = contrato;
+		this.state = state;
+		this.visits = visits;
+		this.urlsFotos = urlsFotos;
+	}
+
+
+
 	public Property(Long id, TipoPropiedad tipo, String ciudad, String metros2, String metros2cubiertos,
 			short ambientes, short habitaciones, short banios, boolean cochera, boolean quincho, boolean parrilla,
 			boolean pileta, String direccion, String barrio, Contract contrato, PropertyState state,
@@ -188,5 +215,17 @@ public class Property {
 	}
 	public Long getId() {
 		return id;
+	}
+	public List<String> getUrlsFotos() {
+		return urlsFotos;
+	}
+	public void setUrlsFotos(List<String> urlsFotos) {
+		this.urlsFotos = urlsFotos;
+	}
+	public void setUrlsFotos(String urlsFotos) {
+		this.urlsFotos.add(urlsFotos);
+	}
+	public void setVisits(Set<Visit> visits) {
+		this.visits = visits;
 	}
 }

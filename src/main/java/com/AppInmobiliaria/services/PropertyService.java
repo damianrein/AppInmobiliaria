@@ -32,4 +32,14 @@ public class PropertyService {
 	void deletePropertyId(Long id) {
 		repo.deleteById(id);
 	}
+	
+	void addFotos(Long id,List<String> urlsFotos) {
+		Property property = repo.findById(id).get();
+		property.setUrlsFotos(urlsFotos);
+	}
+	
+	void addFotos(Long id,String urlsFotos) {
+		Property property = repo.findById(id).get();
+		property.setUrlsFotos(urlsFotos);
+	}
 }
