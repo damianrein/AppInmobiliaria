@@ -17,7 +17,7 @@ public class PropertyService {
 		this.repo = repo;
 	}
 
-	List<Property> findAllProperties(){
+	public List<Property> findAllProperties(){
 		return repo.findAll();
 	}
 	
